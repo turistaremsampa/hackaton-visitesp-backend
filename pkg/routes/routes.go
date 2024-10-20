@@ -6,6 +6,12 @@ import (
 )
 
 func InitializeRoutes(r *gin.Engine) {
+
 	r.POST("/users", controllers.CreateUser)
 	r.GET("/users", controllers.GetAllUsers)
+
+	// Locations feedbacks
+	r.POST("/feedbacks", controllers.CreateFeedback)
+	r.GET("/feedbacks", controllers.GetAllFeedbacks)
+	r.GET("/feedbacks/:id", controllers.GetFeedbackByID)
 }
