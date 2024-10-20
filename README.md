@@ -28,3 +28,37 @@ O principal objetivo do projeto é transformar os moradores de SP em , turistas 
 ## Sobre a equipe de desenvolvimento / Contato
 
 
+
+
+tourism-app-backend/
+├── cmd/
+│   └── main.go
+├── configs/
+│   └── config.go
+├── controllers/
+│   └── userController.go
+│   └── feedbackController.go
+│   └── suggestionController.go
+├── models/
+│   └── user.go
+│   └── feedback.go
+│   └── suggestion.go
+│   └── itinerary.go
+│   └── map.go
+├── services/
+│   └── userService.go
+│   └── feedbackService.go
+│   └── suggestionService.go
+├── repositories/
+│   └── userRepository.go
+│   └── feedbackRepository.go
+│   └── suggestionRepository.go
+├── routes/
+│   └── routes.go
+├── utils/
+│   └── response.go
+├── database/
+│   └── database.go
+├── Dockerfile
+├── go.mod
+└── go.sum

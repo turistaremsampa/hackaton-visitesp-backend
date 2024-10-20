@@ -3,14 +3,9 @@ services:
     build:
       context: .
       dockerfile: .docker/Dockerfile
-    container_name: hackathon-visitesp-golang
-    working_dir: /go/src/github.com/visitesp/hackathon
-    volumes:
-      - .:/go/src/github.com/visitesp/hackathon
     networks:
       - hackathon-visitesp-network
     restart: always
-
   hackathon-visitesp-mysql:
     image: mysql:8.0
     container_name: hackathon-visitesp-mysql
