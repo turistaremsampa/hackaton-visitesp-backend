@@ -4,9 +4,6 @@ services:
       context: .
       dockerfile: .docker/Dockerfile
     container_name: hackathon-visitesp-golang
-    working_dir: /go/src/github.com/visitesp/hackathon
-    volumes:
-      - .:/go/src/github.com/visitesp/hackathon
     networks:
       - hackathon-visitesp-network
     restart: always
