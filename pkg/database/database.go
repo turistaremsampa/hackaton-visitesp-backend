@@ -14,7 +14,7 @@ var DB *gorm.DB
 func ConnectDB() {
 	var err error
 
-	dsn := "root:root@tcp(localhost:3308)/dbVisitesp?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "root:root@tcp(hackathon-visitesp-mysql:3306)/dbVisitesp?charset=utf8mb4&parseTime=True&loc=Local"
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Fatal("Failed to connect to database!", DB)

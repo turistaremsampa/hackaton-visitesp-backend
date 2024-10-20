@@ -1,6 +1,9 @@
 package models
 
+import "gorm.io/gorm"
+
 type Feedback struct {
+	gorm.Model
 	ID         uint   `json:"id" gorm:"primaryKey"`
 	UserID     uint   `json:"user_id"`
 	LocationID uint   `json:"location_id"`
