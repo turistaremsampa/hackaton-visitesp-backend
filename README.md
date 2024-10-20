@@ -1,64 +1,82 @@
-# hackaton-visitesp-backend
 
-*Bem-vindo ao README do projeto turistaremsampa! Este documento visa fornecer uma visão abrangente sobre o projeto.*
+# Backend do Aplicativo de Turismo
 
+Este projeto é um backend baseado em Go para gerenciar usuários, feedbacks e sugestões em um aplicativo de recomendações turísticas. Ele utiliza Gin como framework web e GORM para gerenciamento de banco de dados.
 
-## Índice
+## Estrutura do Projeto
 
-1. [Introdução](#introdução)  
-2. [Objetivo](#objetivo)  
-3. [Sobre o Funcionamento](#sobre-o-funcionamento)  
-4. [Diagrama de Sequência Explicativo](#diagrama-de-sequência-explicativo)  
-5. [Tecnologias Utilizadas](#tecnologias-utilizadas)  
-
-
-
-
-## Objetivo
-
-O principal objetivo do projeto é transformar os moradores de SP em , turistas no próprio destino .
-
-
-## Sobre o Funcionamento 
-
-## Diagrama de Sequência Explicativo
-
-## Tecnologias utilizadas 
-
-## Sobre a equipe de desenvolvimento / Contato
-
-
-
-
+```
 tourism-app-backend/
-├── cmd/
-│   └── main.go
-├── configs/
-│   └── config.go
+├── main.go               # Ponto de entrada da aplicação
+│   
 ├── controllers/
-│   └── userController.go
-│   └── feedbackController.go
-│   └── suggestionController.go
+│   ├── userController.go     # Controlador de usuários
+│   ├── feedbackController.go # Controlador de feedbacks
+│   └── suggestionController.go # Controlador de sugestões
 ├── models/
-│   └── user.go
-│   └── feedback.go
-│   └── suggestion.go
-│   └── itinerary.go
-│   └── map.go
+│   ├── user.go               # Modelo de usuário
+│   ├── feedback.go           # Modelo de feedback
+│   └── suggestion.go         # Modelo de sugestão
 ├── services/
-│   └── userService.go
-│   └── feedbackService.go
-│   └── suggestionService.go
+│   ├── userService.go        # Lógica de negócios de usuários
+│   ├── feedbackService.go    # Lógica de negócios de feedbacks
+│   └── suggestionService.go  # Lógica de negócios de sugestões
 ├── repositories/
-│   └── userRepository.go
-│   └── feedbackRepository.go
-│   └── suggestionRepository.go
+│   ├── userRepository.go     # Consultas ao banco de dados para usuários
+│   ├── feedbackRepository.go # Consultas ao banco de dados para feedbacks
+│   └── suggestionRepository.go # Consultas ao banco de dados para sugestões
 ├── routes/
-│   └── routes.go
-├── utils/
-│   └── response.go
+│   └── routes.go             # Definições de rotas
 ├── database/
-│   └── database.go
-├── Dockerfile
-├── go.mod
-└── go.sum
+│   └── database.go           # Conexão e configuração do banco de dados
+├── go.mod                    # Módulos Go
+└── go.sum                    # Checksum dos módulos Go
+```
+
+## Instalação
+
+### Pré-requisitos
+
+- Go (v1.20 ou superior)
+- MySQL
+
+### Clonar o repositório
+
+```bash
+git clone https://github.com/turistaremsampa/hackaton-visitesp-backend.git
+cd hackaton-visitesp-backend
+```
+
+### Instalar as dependências
+
+```bash
+go mod tidy
+```
+
+### Rodar a aplicação
+
+```bash
+go run .
+```
+
+A aplicação será executada em `http://localhost:8080`.
+
+## Endpoints da API
+
+### Usuário
+
+- **POST** `/user/login`: Entrar com e-mail e senha 
+- **POST** `/users`: Criar um novo usuário
+- **GET** `/users`: Listar todos os usuários
+
+### Feedback
+
+- **POST** `/feedbacks`: Criar um novo feedback
+- **GET** `/feedbacks`: Listar todos os feedbacks
+- **GET** `/feedbacks/:id`: Obter feedback por ID
+
+### Sugestão
+
+- **POST** `/suggestions`: Criar uma nova sugestão
+- **GET** `/suggestions`: Listar todas as sugestões
+- **GET** `/suggestions/:id`: Obter sugestão por ID
