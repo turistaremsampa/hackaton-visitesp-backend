@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: .docker/Dockerfile
+    container_name: hackathon-visitesp-golang
     networks:
       - hackathon-visitesp-network
     restart: always
