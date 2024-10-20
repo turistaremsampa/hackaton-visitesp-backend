@@ -7,7 +7,6 @@ services:
     networks:
       - hackathon-visitesp-network
     restart: always
-
   hackathon-visitesp-mysql:
     image: mysql:8.0
     container_name: hackathon-visitesp-mysql
