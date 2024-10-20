@@ -1,0 +1,26 @@
+services:
+  hackathon-visitesp-golang:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    container_name: hackathon-visitesp-golang
+    networks:
+      - hackathon-visitesp-network
+    restart: always
+  hackathon-visitesp-mysql:
+    image: mysql:8.0
+    container_name: hackathon-visitesp-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: hackathon_visitesp
+    ports:
+      - "33088:3306"
+    volumes:
+      - .docker/local/data/mysql:/var/lib/mysql
+    networks:
+      - hackathon-visitesp-network
+    restart: always
+
+networks:
+    hackathon-visitesp-network:
+        driver: bridge
