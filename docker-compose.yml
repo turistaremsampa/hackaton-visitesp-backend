@@ -7,14 +7,17 @@ services:
     networks:
       - hackathon-visitesp-network
     restart: always
+    ports:
+      - "8080:8080"
+      
   hackathon-visitesp-mysql:
     image: mysql:8.0
     container_name: hackathon-visitesp-mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: hackathon_visitesp
+      MYSQL_DATABASE: dbVisitesp
     ports:
-      - "33088:3306"
+      - "3307:3307"
     volumes:
       - .docker/local/data/mysql:/var/lib/mysql
     networks:
