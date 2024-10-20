@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+
 	"github.com/turistaremsampa/hackaton-visitesp-backend/pkg/routes"
 
 	"github.com/gin-gonic/gin"
@@ -19,4 +21,5 @@ func main() {
 
 	// Start the server
 	r.Run(":8080")
+	log.Println("Server started on port 8080")
 }
