@@ -18,5 +18,5 @@ func ConnectDB() {
 	}
 
 	// Run auto migrations
-	DB.AutoMigrate(&models.User{})
+	DB.AutoMigrate(&models.User{}, &models.Feedback{}, &models.Suggestion{})
 }
